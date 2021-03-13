@@ -1,0 +1,10 @@
+.seatbuilder {
+  margin: 0 50px;
+}
+.seatbuilder__form {
+  margin-bottom: 20px;
+}
+.seatbuilder__grid_container {
+  display: grid;
+  grid-gap: 5px;
+}

@@ -1,0 +1,20 @@
+.seatbuilderitem {
+  text-align: center;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+}
+.seatbuilderitem:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.seatbuilderitem__disabled {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+}
+.seatbuilderitem__disabled:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
