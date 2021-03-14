@@ -1,0 +1,7 @@
+.seatpicker {
+  margin: 0 50px;
+}
+.seatpicker__grid_container{
+  display: grid;
+  grid-gap: 5px;
+}

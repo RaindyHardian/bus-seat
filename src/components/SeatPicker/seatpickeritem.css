@@ -1,0 +1,37 @@
+.seatpickeritem {
+  text-align: center;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+}
+.seatpickeritem:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.seatpickeritem__booked {
+  text-align: center;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(245, 106, 106);
+  color: white;
+}
+
+.seatpickeritem__selected {
+  text-align: center;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(106, 245, 180);
+}
+.seatpickeritem__selected:hover {
+  background-color: rgb(73, 250, 167);
+  cursor: pointer;
+}
+
+.sseatpickeritem__disabled {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+}
