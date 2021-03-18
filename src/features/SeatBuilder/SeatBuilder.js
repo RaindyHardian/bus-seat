@@ -10,8 +10,8 @@ import "./seatbuilder.css";
 import SeatBuilderItem from "../../components/SeatBuilder/SeatBuilderItem";
 
 const SeatBuilder = () => {
-  const [col, setCol] = useState(0);
-  const [row, setRow] = useState(0);
+  const [col, setCol] = useState(3);
+  const [row, setRow] = useState(4);
   const [disabledSeat, setDisabledSeat] = useState([]);
   const item = row * col;
 
@@ -43,36 +43,49 @@ const SeatBuilder = () => {
 
   return (
     <div className="seatbuilder">
-      <h1>Seat Builder</h1>
+      <div className="seatbuilder__title_continaer">
+        <h1 className="seatbuilder__title">Seat Builder</h1>
+      </div>
+      <div className="seatbuilder__description">
+        <p>
+          Change the <b>column</b> and <b>row</b> number below to configure the
+          bus seat setup.
+        </p>
+        <p>
+          Click the <b>seat tile</b> to <b>activate or deactivate</b> a seat for the bus seat
+          layout.
+        </p>
+      </div>
+      <div className="seatbuilder__content">
+        <form className="seatbuilder__form">
+          <label>Column</label>
+          <NumberInput defaultValue={col} min={0} onChange={changeCol}>
+            <NumberInputField />
+            <NumberInputStepper>
+              <NumberIncrementStepper />
+              <NumberDecrementStepper />
+            </NumberInputStepper>
+          </NumberInput>
+          <label>Row</label>
+          <NumberInput defaultValue={row} min={0} onChange={changeRow}>
+            <NumberInputField />
+            <NumberInputStepper>
+              <NumberIncrementStepper />
+              <NumberDecrementStepper />
+            </NumberInputStepper>
+          </NumberInput>
+        </form>
 
-      <form className="seatbuilder__form">
-        <label>Column</label>
-        <NumberInput defaultValue={col} min={0} onChange={changeCol}>
-          <NumberInputField />
-          <NumberInputStepper>
-            <NumberIncrementStepper />
-            <NumberDecrementStepper />
-          </NumberInputStepper>
-        </NumberInput>
-        <label>Row</label>
-        <NumberInput defaultValue={row} min={0} onChange={changeRow}>
-          <NumberInputField />
-          <NumberInputStepper>
-            <NumberIncrementStepper />
-            <NumberDecrementStepper />
-          </NumberInputStepper>
-        </NumberInput>
-      </form>
-
-      <div className="seatbuilder__grid_container" style={grid}>
-        {Array.apply(null, Array(item)).map((e, i) => (
-          <SeatBuilderItem
-            key={i}
-            seatKey={i}
-            clickSeat={clickSeat}
-            disabled={disabledSeat.includes(i)}
-          />
-        ))}
+        <div className="seatbuilder__grid_container" style={grid}>
+          {Array.apply(null, Array(item)).map((e, i) => (
+            <SeatBuilderItem
+              key={i}
+              seatKey={i}
+              clickSeat={clickSeat}
+              disabled={disabledSeat.includes(i)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
