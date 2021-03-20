@@ -1,7 +1,34 @@
 .seatpicker {
-  margin: 0 50px;
+  margin: 20px 50px 50px 50px;
 }
-.seatpicker__grid_container{
+
+.seatpicker__title_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.seatpicker__description {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.seatpicker__title {
+  text-align: center;
+  font-size: 34px;
+  background-color: rgb(83, 83, 216);
+  color: white;
+  padding: 5px 30px;
+  font-weight: normal;
+}
+
+.seatpicker__content {
+  display: flex;
+  justify-content: center;
+}
+
+.seatpicker__grid_container {
   display: grid;
   grid-gap: 5px;
 }
