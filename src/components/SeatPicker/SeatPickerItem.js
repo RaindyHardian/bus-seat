@@ -10,7 +10,7 @@ const SeatPickerItem = ({
   handleClick,
 }) => {
   const click = () => {
-    handleClick(seatId);
+    handleClick(seatId, seatKey);
   };
 
   if (disabled) {

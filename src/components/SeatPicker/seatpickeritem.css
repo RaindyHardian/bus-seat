@@ -30,7 +30,7 @@
   font-weight: 700;
 }
 .seatpickeritem__selected:hover {
-  background-color: rgb(92, 92, 238);
+  opacity: 0.95;
   cursor: pointer;
 }
 

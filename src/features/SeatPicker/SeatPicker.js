@@ -16,7 +16,7 @@ const SeatPicker = () => {
     setLoading(false);
   }, []);
 
-  const handleClick = (seatId) => {
+  const handleClick = (seatId, seatKey) => {
     // check if the seat is already selected
     if (selected.some((element) => element.seat_id === seatId)) {
       setSelected((prev) => {
@@ -30,6 +30,7 @@ const SeatPicker = () => {
           {
             person_name: "",
             seat_id: seatId,
+            seat_key: seatKey,
           },
         ];
       });
@@ -50,10 +51,11 @@ const SeatPicker = () => {
         <p>This is a seat layout sample with 5 columns and 10 rows.</p>
         <p>Click the seat below to buy a ticket for the specific seat.</p>
       </div>
-      <div className="seatpicker__content">
-        {loading ? (
-          <div>Please wait...</div>
-        ) : (
+
+      {loading ? (
+        <div className="seatpicker__loading">Please wait...</div>
+      ) : (
+        <div className="seatpicker__content">
           <div className="seatpicker__grid_container" style={grid}>
             {Array.apply(null, Array(item)).map((e, i) => (
               <SeatPickerItem
@@ -69,8 +71,27 @@ const SeatPicker = () => {
               />
             ))}
           </div>
-        )}
-      </div>
+          <div className="seatpicker__selected">
+            <div className="seatpicker__selected_title">Seat Selected</div>
+            <ul className="seatpicker__selected_list">
+              {selected.map((item) => (
+                <li
+                  key={item.seat_key}
+                  className="seatpicker__selected_list_item"
+                >
+                  {item.seat_key + 1}
+                </li>
+              ))}
+            </ul>
+            <button
+              className="seatpicker__selected_order"
+              disabled={selected.length === 0}
+            >
+              Order
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
